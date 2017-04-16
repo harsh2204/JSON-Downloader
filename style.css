@@ -2,8 +2,13 @@ body{
     background-color: lightblue;
 }
 .title{
-  font-size: 28px;
-  font-family: "Times New Roman", Helvetica, Serif;
+  font-size: 56px;
+  color: white;
+  transition-duration: 0.4s;
+  font-weight: bold;
+  width: 100%;
+  background-color: #008CBA;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
   text-align: center;
 }
 .list{
@@ -18,6 +23,7 @@ body{
   background-color: #5F9EA0;
   box-shadow: 0 0 8px 8px lightblue inset;
 }
+
 .button-style{
   transition-duration: 0.4s;
   background-color: #555555;

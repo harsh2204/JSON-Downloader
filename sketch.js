@@ -3,12 +3,12 @@ var button;
 var input;
 var para;
 var list;
+var downloader;
 // function preload(){
 //    music = loadJSON("uplifting");
 // }
 function setup() {
   var title = createDiv("JSON Downloader");
-  title.size(window.innerWidth,40);
   title.addClass('title');
   title.position(0,20);
   input = createFileInput(handleFile);
@@ -25,8 +25,9 @@ function setup() {
   noLoop();
 }
 function startDownload(){
+  button.attribute("disabled","disabled");
   var counter = 0;
-  var downloader = setInterval(function(){
+  downloader = setInterval(function(){
     listSongs();
     if(counter <music.music.length){
       var names = music.music[counter].split("/");
