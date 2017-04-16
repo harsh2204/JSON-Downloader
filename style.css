@@ -18,7 +18,7 @@ body {
 }
 
 .title:before {
-  content: "JSON Downloader";
+    content: "JSON Downloader";
     height: 60%;
     position: absolute;
     color: lightblue;
@@ -54,3 +54,46 @@ body {
     /* Green */
     color: white;
 }
+
+
+/*.checkBoxes{
+  margin-left: 700px;
+  font-size: 28px;
+}*/
+.checkDiv{
+  margin-top: -50px;
+margin-left: 600px;
+text-align: center;
+}
+.Status{
+  margin: 100px;
+}
+input[type=checkbox].checkbox {
+							position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+						}
+
+						input[type=checkbox].checkbox + label.checkbox-label {
+							padding-left:25px;
+							height:20px;
+							display:inline-block;
+							line-height:20px;
+							background-repeat:no-repeat;
+							background-position: 0 0;
+							font-size:20px;
+							vertical-align:middle;
+							cursor:pointer;
+
+						}
+
+						input[type=checkbox].checkbox:checked + label.checkbox-label {
+							background-position: 0 -20px;
+						}
+						label.checkbox-label {
+				background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_a967b1e8ddfb00be4a2edf9abd4371c3.png);
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
