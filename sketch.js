@@ -55,12 +55,13 @@ function listSongs(){
     temp += music.music[i] + "<br>"
   }
   list = createDiv(temp);
-  list.position(0,250);
+  list.position(0,0);
   list.addClass('list');
 }
 function start(){
   button = createButton("Start Downloads");
-  button.position(19, 19);
+  button.position(window.innerWidth/2-150, 150);
+  button.addClass('button-style');
   button.mousePressed(startDownload);
   console.clear();
   var temp = setInterval(function(){
