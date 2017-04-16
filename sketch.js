@@ -8,8 +8,9 @@ var list;
 // }
 function setup() {
   var title = createDiv("JSON Downloader");
+  title.size(window.innerWidth,40);
   title.addClass('title');
-  title.position(window.innerWidth/2,20);
+  title.position(0,20);
   input = createFileInput(handleFile);
   input.position(400, 100);
   para = createDiv("File: ");
@@ -55,12 +56,19 @@ function listSongs(){
   }
   list = createDiv(temp);
   list.position(0,250);
+  list.addClass('list');
 }
 function start(){
   button = createButton("Start Downloads");
   button.position(19, 19);
   button.mousePressed(startDownload);
   console.clear();
+  var temp = setInterval(function(){
+    if(typeof music != 'undefined'){
+      clearInterval(temp);
+      listSongs();
+    }
+  },250);
 }
 function handleFile(file) {
     print(file);

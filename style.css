@@ -1,0 +1,21 @@
+body{
+    background-color: lightblue;
+}
+.title{
+  font-size: 28px;
+  font-family: "Times New Roman", Helvetica, Serif;
+  text-align: center;
+}
+.list{
+  margin: auto;
+  font-size: 12px;
+  font-size: 0.65em;
+  float: left;
+  column-count: 2;
+  column-rule: 1px outset blue;
+  width: 900px;
+  height: 400px;
+  margin-left: 200px;
+  font-family: "Times New Roman", Helvetica, Serif;
+  background-color: cyan;
+}
