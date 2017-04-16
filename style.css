@@ -1,41 +1,56 @@
-body{
+body {
     background-color: lightblue;
 }
-.title{
-  font-size: 56px;
-  color: white;
-  transition-duration: 0.4s;
-  font-weight: bold;
-  width: 100%;
-  background-color: #008CBA;
-  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-  text-align: center;
-}
-.list{
-  font-size: 12px;
-  font-size: 0.65em;
-  float: left;
-  padding: 20px;
-  column-count: 2;
-  column-rule: 1px outset blue;
-  margin: 200px;
-  font-family: "Times New Roman", Helvetica, Serif;
-  background-color: #5F9EA0;
-  box-shadow: 0 0 8px 8px lightblue inset;
+
+.title {
+    position: relative;
+    font-size: 56px;
+    color: white;
+    transition-duration: 0.4s;
+    font-weight: bold;
+    width: 100%;
+    background-color: #008CBA;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    text-align: center;
+    color: #fff;
+    text-shadow: #000 0px 0px 10px;
+    -webkit-font-smoothing: antialiased;
 }
 
-.button-style{
-  transition-duration: 0.4s;
-  background-color: #555555;
-  border: none;
-  text-decoration: none;
-  display: inline-block;
-  color: white;
-  font-size: 36px;
-  font-family: Helvetica, Arial, Serif;
+.title:before {
+  content: "JSON Downloader";
+    height: 60%;
+    position: absolute;
+    color: lightblue;
+    overflow: hidden;
+}
+
+.list {
+    font-size: 12px;
+    font-size: 0.65em;
+    float: left;
+    padding: 20px;
+    column-count: 2;
+    column-rule: 1px outset blue;
+    margin: 200px;
+    font-family: "Times New Roman", Helvetica, Serif;
+    background-color: #5F9EA0;
+    box-shadow: 0 0 8px 8px lightblue inset;
+}
+
+.button-style {
+    transition-duration: 0.4s;
+    background-color: #555555;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    font-size: 36px;
+    font-family: Helvetica, Arial, Serif;
 }
 
 .button-style:hover {
-    background-color: grey; /* Green */
+    background-color: grey;
+    /* Green */
     color: white;
 }
