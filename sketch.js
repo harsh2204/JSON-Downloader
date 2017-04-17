@@ -5,6 +5,7 @@ var para;
 var list;
 var downloader;
 var script;
+var fileName;
 // function preload(){
 //    music = loadJSON("uplifting");
 // }
@@ -17,6 +18,7 @@ function setup() {
     input.position(400, 100);
     para = createDiv("File: ");
     para.addClass('Status');
+    para.attribute("id", "status");
     // console.log(music);
     // for(var i = 0; i<music.music.length;i++){
     //   console.log(music.music[i]);
@@ -31,7 +33,7 @@ function setup() {
 
 function startDownload() {
     if ($('.checkbox').is(':checked')) {
-        script.onload(music.music);
+        script.onload(music.music,fileName);
     } else {
         button.attribute("disabled", "disabled");
         var counter = 0;
@@ -40,8 +42,7 @@ function startDownload() {
             if (counter < music.music.length) {
                 var names = music.music[counter].split("/");
                 var name = names[names.length - 1];
-                para.remove();
-                para = createDiv("File: " + name);
+                para.html("File "+ name);
                 downloadURI(music.music[counter], name);
                 counter++;
             } else {
@@ -89,6 +90,7 @@ function start() {
 function handleFile(file) {
     print(file);
     // if (file.type === 'text') {
+    fileName = file.name.split(".")[1];
     music = loadJSON(file.data);
     start();
     // }

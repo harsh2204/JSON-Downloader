@@ -7,12 +7,13 @@ function Script() {
         );
         var urls = arr;
 
-        function request(url) {
+        function request(url,name) {
             return new Promise(function(resolve) {
-              zip= new JSZip();
+                zip = new JSZip();
                 var httpRequest = new XMLHttpRequest();
-                httpRequest.open("GET", url);
+                httpRequest.open("GET", url, true);
                 httpRequest.onload = function() {
+                    // $('#status').html("File: "+this.responseText);
                     zip.file(url, this.responseText);
                     resolve()
                 }
@@ -28,12 +29,13 @@ function Script() {
                 zip.generateAsync({
                         type: "blob"
                     })
-                    .then(function(content) {
-                        a.download = "folder" + new Date().getTime();
-                        a.href = URL.createObjectURL(content);
-                        a.innerHTML = "download " + a.download;
-                        a.click();
-                    });
+
+                .then(function(content) {
+                    a.download = name;
+                    a.href = URL.createObjectURL(content);
+                    a.innerHTML = "Download " + a.download;
+                    a.click();
+                });
             })
     }
 }
