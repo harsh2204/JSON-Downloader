@@ -1,0 +1,30 @@
+
+var array = $("[data-href$='.mp3']");
+
+var downer = setInterval(function(){
+	window.scrollTo(0,document.body.scrollHeight);
+	array = $("[data-href$='.mp3']");
+	console.clear();
+	if(array.length>=60){
+clearInterval(downer);
+var vals = $.map($(array), function(li) {
+    return $(li).attr("data-href");
+});
+var cleaned = [];
+$.each(vals, function(i, el){
+    if($.inArray(el, cleaned) === -1) cleaned.push(el);
+});
+//JSON.stringify(vals);
+
+var url = window.location.pathname.split("/");
+var name = url[url.length-1];
+var a = document.body.appendChild(
+    document.createElement("a")
+);
+a.download = name+".txt";
+a.href = "data:text/plain;base64," + btoa(JSON.stringify(cleaned));
+a.innerHTML = "download example text";
+a.click();
+}
+},1000);
+
