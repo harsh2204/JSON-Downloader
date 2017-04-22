@@ -12,9 +12,12 @@ function Script() {
       //   arr[i] = temp;
       // }
       //:/
-      var links = "["+arr.toString()+"]";
-      console.log(links);
-      a.href = url+apiKey+"/zip/"+links;
-      a.click();
+      if(arr.length!=0){
+        var links = "["+arr.toString()+"]";
+        console.log(links);
+        a.href = url+apiKey+"/zip/"+links;
+        a.click();
+      }
+
     }
 }
